@@ -1,0 +1,57 @@
+{
+  "collections": [
+    {
+      "name": "blog",
+      "displayName": "Blog",
+      "loader": {
+        "type": "glob",
+        "base": "src/content/blog",
+        "pattern": "**/*.{md,mdx}"
+      },
+      "formats": ["md", "mdx"],
+      "fields": [
+        { "fieldName": "draft", "type": "boolean" },
+        { "fieldName": "title", "type": "string" },
+        { "fieldName": "snippet", "type": "string" },
+        {
+          "fieldName": "image",
+          "type": "object",
+          "fields": [
+            { "fieldName": "src", "type": "string" },
+            { "fieldName": "alt", "type": "string" }
+          ]
+        },
+        { "fieldName": "category", "type": "string" },
+        {
+          "fieldName": "tags",
+          "type": "array",
+          "items": { "fieldName": "items", "type": "string" }
+        }
+      ]
+    },
+    {
+      "name": "team",
+      "displayName": "Team",
+      "loader": {
+        "type": "glob",
+        "base": "src/content/team",
+        "pattern": "**/*.{md,mdx}"
+      },
+      "formats": ["md", "mdx"],
+      "fields": [
+        { "fieldName": "draft", "type": "boolean" },
+        { "fieldName": "name", "type": "string" },
+        { "fieldName": "title", "type": "string" },
+        {
+          "fieldName": "avatar",
+          "type": "object",
+          "fields": [
+            { "fieldName": "src", "type": "string" },
+            { "fieldName": "alt", "type": "string" }
+          ]
+        }
+      ]
+    }
+  ],
+  "updatedAt": 1761528320493
+}

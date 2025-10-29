@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: The Complete Guide to Full Stack Web Development
 snippet: >-
   Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula

@@ -5,13 +5,18 @@ import Features from "@/components/features.astro";
 import Hero from "@/components/hero.astro";
 import Logos from "@/components/logos.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+
+const {data: features} = (await getCollection("features"))[0];
+const { data: hero } = (await getCollection("hero"))[0];
 ---
 
 <Layout title="">
   <Container>
-    <Hero />
-    <Features />
-    <Logos />
-    <Cta />
+    <Hero {...hero} />
+    <Features {...features} />
+    <!-- <Logos />
+    <Cta /> -->
   </Container>
 </Layout>

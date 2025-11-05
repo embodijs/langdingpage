@@ -1,0 +1,11 @@
+- id: hero
+  headline: Marketing website done with Astro
+  intro:
+    Astroship is a starter template for startups, marketing websites & landing
+    pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
+    any website with this starter.
+  actions:
+    - label: Get Started
+      href: https://app.embdoi.site
+      outline: false
+      icon: bx:bxs-cloud

@@ -6,52 +6,138 @@
       "loader": {
         "type": "glob",
         "base": "src/content/blog",
-        "pattern": "**/*.{md,mdx}"
+        "pattern": "*.md"
       },
-      "formats": ["md", "mdx"],
-      "fields": [
-        { "fieldName": "draft", "type": "boolean" },
-        { "fieldName": "title", "type": "string" },
-        { "fieldName": "snippet", "type": "string" },
-        {
-          "fieldName": "image",
-          "type": "object",
-          "fields": [
-            { "fieldName": "src", "type": "string" },
-            { "fieldName": "alt", "type": "string" }
-          ]
-        },
-        { "fieldName": "category", "type": "string" },
-        {
-          "fieldName": "tags",
-          "type": "array",
-          "items": { "fieldName": "items", "type": "string" }
-        }
-      ]
+      "formats": ["md"],
+      "definition": {
+        "type": "object",
+        "fields": [
+          { "fieldName": "draft", "type": "boolean" },
+          { "fieldName": "title", "type": "string" },
+          { "fieldName": "snippet", "type": "string" },
+          {
+            "fieldName": "image",
+            "type": "object",
+            "fields": [
+              { "fieldName": "src", "type": "string" },
+              { "fieldName": "alt", "type": "string" }
+            ]
+          },
+          { "fieldName": "author", "type": "string", "default": "Embodi" },
+          { "fieldName": "category", "type": "string" },
+          {
+            "fieldName": "tags",
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        ]
+      }
     },
     {
       "name": "team",
       "displayName": "Team",
-      "loader": {
-        "type": "glob",
-        "base": "src/content/team",
-        "pattern": "**/*.{md,mdx}"
-      },
-      "formats": ["md", "mdx"],
-      "fields": [
-        { "fieldName": "draft", "type": "boolean" },
-        { "fieldName": "name", "type": "string" },
-        { "fieldName": "title", "type": "string" },
-        {
-          "fieldName": "avatar",
+      "loader": { "type": "file", "path": "src/content/team.json" },
+      "definition": {
+        "type": "array",
+        "items": {
           "type": "object",
           "fields": [
-            { "fieldName": "src", "type": "string" },
-            { "fieldName": "alt", "type": "string" }
+            {
+              "fieldName": "id",
+              "type": "string",
+              "pattern": "uuid",
+              "hidden": true,
+              "generate": true
+            },
+            { "fieldName": "draft", "type": "boolean" },
+            { "fieldName": "name", "type": "string" },
+            { "fieldName": "title", "type": "string" },
+            {
+              "fieldName": "avatar",
+              "type": "object",
+              "fields": [
+                { "fieldName": "src", "type": "string" },
+                { "fieldName": "alt", "type": "string" }
+              ]
+            }
           ]
         }
-      ]
+      }
+    },
+    {
+      "name": "features",
+      "displayName": "Features",
+      "loader": { "type": "file", "path": "src/content/features.json" },
+      "definition": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "fields": [
+            {
+              "fieldName": "id",
+              "type": "string",
+              "pattern": "uuid",
+              "hidden": true,
+              "generate": true
+            },
+            { "fieldName": "title", "type": "string" },
+            { "fieldName": "description", "type": "string" },
+            {
+              "fieldName": "features",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "fields": [
+                  { "fieldName": "title", "type": "string" },
+                  { "fieldName": "description", "type": "string" },
+                  { "fieldName": "icon", "type": "string" }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "hero",
+      "displayName": "Hero",
+      "loader": { "type": "file", "path": "src/data/hero.yaml" },
+      "definition": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "fields": [
+            {
+              "fieldName": "id",
+              "type": "string",
+              "pattern": "uuid",
+              "hidden": true,
+              "generate": true
+            },
+            { "fieldName": "headline", "type": "string" },
+            { "fieldName": "intro", "type": "string" },
+            {
+              "fieldName": "actions",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "fields": [
+                  { "fieldName": "label", "type": "string" },
+                  { "fieldName": "icon", "type": "string", "optional": true },
+                  { "fieldName": "href", "type": "string", "pattern": "url" },
+                  {
+                    "fieldName": "outline",
+                    "type": "boolean",
+                    "default": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
     }
   ],
-  "updatedAt": 1761528320493
+  "updatedAt": 1762385142173,
+  "v": "1.0"
 }

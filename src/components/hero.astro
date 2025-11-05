@@ -3,6 +3,21 @@ import { Picture } from "astro:assets";
 import heroImage from "@/assets/hero.png";
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
+
+export interface Props {
+  headline: string;
+  intro: string;
+  actions: {
+    label: string;
+    icon: string;
+    outline: boolean;
+    href: string;
+  }[];
+}
+
+const {headline, intro, actions} = Astro.props;
+
+
 ---
 
 <main
@@ -20,34 +35,23 @@ import { Icon } from "astro-icon/components";
   <div>
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      {headline}
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
+    <p class="text-lg mt-4 text-slate-600 max-w-xl" set:html={intro}>
+
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+<div class="mt-6 flex flex-col sm:flex-row gap-3">
+    {(actions ?? []).map(({ label, icon, outline, href }) => (
       <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+        href={href}
+        style={outline ? "outline" : undefined}
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-        Download for Free
+        {icon && <Icon class={`w-5 h-5 ${outline ? 'text-black' : 'text-white'}`} name={icon} />}
+        {label}
       </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
-      </Link>
+    ))}
     </div>
   </div>
 </main>

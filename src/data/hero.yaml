@@ -1,10 +1,13 @@
 - id: 2df914c2-4eee-4c86-a2b0-6ffd14e5aa0e
-  headline: Git CMS that stays simple
-  intro: Astroship is a starter template for startups, marketing websites &
-    landing pages.<wbr /> Built with Astro.build and TailwindCSS. You can
-    quickly create any website with this starter.
+  headline: Marketing website done with Astro
+  intro: EmbodiCMS turns your Astro content collections into a full editing
+    interface without the infrastructure headache. Install a Vite plugin,
+    connect your GitHub repository, and you're done. Content editors get a clean
+    UI, developers keep everything in Git with full version control, and nobody
+    has to maintain servers or wrangle complex configurations. One lightweight
+    instance handles all your projects.
   actions:
     - label: Get Started
-      icon: bx:bxs-cloud
+      icon: lucide:rocket
       href: https://app.embdoi.site
       outline: false

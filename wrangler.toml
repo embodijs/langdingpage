@@ -1,0 +1,10 @@
+name = "embodi_website"
+compatibility_date = "2025-04-03"
+[build]
+command = "bun run build"
+
+[assets]
+directory = "./dist"
+
+[observability.logs]
+enabled = true

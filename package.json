@@ -30,6 +30,7 @@
     "yaml": "^2.8.1"
   },
   "devDependencies": {
-    "@embodi/vite-astro-cms": "^0.6.0"
+    "@embodi/vite-astro-cms": "^0.6.0",
+    "wrangler": "^4.45.4"
   }
 }

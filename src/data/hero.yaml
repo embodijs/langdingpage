@@ -1,5 +1,5 @@
 - id: 2df914c2-4eee-4c86-a2b0-6ffd14e5aa0e
-  headline: Marketing website done with Astro
+  headline: Git CMS that stays simple
   intro: EmbodiCMS turns your Astro content collections into a full editing
     interface without the infrastructure headache. Install a Vite plugin,
     connect your GitHub repository, and you're done. Content editors get a clean

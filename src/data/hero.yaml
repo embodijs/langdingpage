@@ -9,5 +9,5 @@
   actions:
     - label: Get Started
       icon: lucide:rocket
-      href: https://app.embdoi.site
+      href: https://app.embodi.site
       outline: false

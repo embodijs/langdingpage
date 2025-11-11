@@ -48,8 +48,9 @@ const {headline, intro, actions} = Astro.props;
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-        {icon && <Icon class={`w-5 h-5 ${outline ? 'text-black' : 'text-white'}`} name={icon} />}
+            {icon && <Icon class={`w-5 h-5 ${outline ? 'text-black' : 'text-white'}`} name={icon} />}
         {label}
+
       </Link>
     ))}
     </div>

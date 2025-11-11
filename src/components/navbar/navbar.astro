@@ -3,6 +3,7 @@ import Container from "@/components/container.astro";
 import Link from "@/components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Icon } from "astro-icon/components";
 
 const menuitems = [
   {
@@ -73,14 +74,16 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
+            <Link href="https://app.embodi.site" size="md">App</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="https://app.embodi.site" size="md">App</Link>
+          <Link href="https://app.embodi.site" size="md" class="flex items-center gap-1">
+            <Icon class="text-white h-5 w-5" name="lucide:rocket" />
+            App
+          </Link>
       </div>
     </div>
   </header>
